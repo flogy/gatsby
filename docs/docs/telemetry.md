@@ -39,6 +39,9 @@ Specifically, we collect the following information for _all_ telemetry events:
 - One-way hash of the current working directory or a hash of the git remote
 - General OS level information (operating system, version, CPU architecture, and whether the command is run inside a CI)
 - Current Gatsby version
+- For build
+  - Build stats (how big are the output bundles)
+  - GraphQL Query stats - number of unique operations, queries and how many time search was called. We also track how many leaf search operations were used (things like eq, ne, gt). We use this data to prioritize which query patterns to optimize. We don't track actual queries or their results.
 
 The access to the raw data is highly controlled, and we cannot identify individual users from the dataset. It is anonymized and untraceable back to the user.
 
